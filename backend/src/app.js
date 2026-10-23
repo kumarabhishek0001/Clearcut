@@ -7,7 +7,7 @@ import morgan from 'morgan'
 const app = express();
 const cors_config = {
   origin: "http://localhost:5173",
-  origin: true,
+  Credential: true,
 };
 
 // Initialzing Middleware
@@ -21,4 +21,4 @@ app.get("/", (req, res) => {
   res.send("<h1>App is live</h1>");
 });
 
-export { app };
+export default app ;

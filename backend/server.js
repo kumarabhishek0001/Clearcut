@@ -1,6 +1,6 @@
 import chalk from "chalk";
 
-import { app } from "./src/app.js";
+import app  from "./src/app.js";
 import connectDB from "./src/configs/database.js";
 
 // App Configurations
