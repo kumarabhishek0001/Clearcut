@@ -5,6 +5,7 @@ import connectDB from "./src/configs/database.js";
 
 // App Configurations
 await connectDB()
+console.log("SERVER.JS: DATABASE CONNECTION COMPLETED");
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
