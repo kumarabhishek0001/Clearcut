@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import morgan from 'morgan'
+import userRouter from "./routes/userRoutes.js";
 
 // App Configurations
 const app = express();
@@ -20,5 +21,7 @@ app.use(morgan('dev'))
 app.get("/", (req, res) => {
   res.send("<h1>App is live</h1>");
 });
+
+app.use('/api/user', userRouter)
 
 export default app ;
