@@ -13,6 +13,8 @@ const clerkWebhooks = async (req, res) => {
       "svix-signature": req.headers["svix-signature"],
     });
 
+    console.log("Verified event:", evt);
+
     // 2. Use the verified event, not req.body
     const { data, type } = evt;
 
