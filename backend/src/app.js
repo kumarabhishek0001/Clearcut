@@ -1,4 +1,4 @@
-console.log("APP.JS LOADED");
+console.log("APP.JS LOADED..........");
 
 
 import "dotenv/config";
