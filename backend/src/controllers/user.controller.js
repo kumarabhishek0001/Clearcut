@@ -7,13 +7,16 @@ const clerkWebhooks = async (req, res) => {
     // 1. Verify the webhook using the raw request body
     const wHook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);
 
-    const evt = wHook.verify(req.body, {
+    wHook.verify(req.body, {
       "svix-id": req.headers["svix-id"],
       "svix-timestamp": req.headers["svix-timestamp"],
       "svix-signature": req.headers["svix-signature"],
     });
 
+    const evt = JSON.parse(req.body.toString());
+
     console.log("Verified event:", evt);
+    console.log("Verified event:", evt.type);
 
     // 2. Use the verified event, not req.body
     const { data, type } = evt;
